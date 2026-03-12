@@ -13,6 +13,9 @@ namespace FUTUREVISION.WebAR
 {
     public class ARObjectItem : MonoBehaviour
     {
+        [Header("Spirit 매핑 키 (SpiritTable.Key 와 일치시킬 것)")]
+        public string SpiritKey;
+
         [Space]
         public UnityEvent<ARObjectItem> OnClickMouseButton;
         public GameObject MissionObject;

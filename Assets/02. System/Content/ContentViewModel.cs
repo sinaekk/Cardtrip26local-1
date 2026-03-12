@@ -520,6 +520,16 @@ namespace FUTUREVISION.Content
         private Coroutine guideCoroutine;
         private void StartStage1()
         {
+            // ── P1-07: SpiritKey 기반 AR 오브젝트 선택 (null-safe) ──────
+            string spiritKey = GlobalManager.Instance.DataModel.Session.SpiritKey;
+            var arObjectView = WebARManager.Instance.ARViewModel.ARObjectView;
+            if (arObjectView != null && !string.IsNullOrEmpty(spiritKey))
+            {
+                arObjectView.SetCurrentObjectByKey(spiritKey);
+                Debug.Log($"[ContentViewModel] AR Spirit selected: {spiritKey}", this);
+            }
+            // ─────────────────────────────────────────────────────────────
+
             CardTripView.SetStage(ECardTripStage.Stage1Guide);
             guideCoroutine = StartCoroutine(ARGuideCoroutine(CardTripView.Stage1GuideObject, () =>
             {

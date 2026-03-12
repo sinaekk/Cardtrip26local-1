@@ -102,5 +102,20 @@ namespace FUTUREVISION.WebAR
         {
             return ObjectList[CurrentObjectIndex];
         }
+
+        /// <summary>
+        /// SpiritKey 와 일치하는 ARObjectItem 을 활성화한다.
+        /// 매칭 항목이 없으면 index 0 을 fallback 으로 사용.
+        /// </summary>
+        public void SetCurrentObjectByKey(string spiritKey)
+        {
+            int index = ObjectList.FindIndex(item => item.SpiritKey == spiritKey);
+            if (index < 0)
+            {
+                Debug.LogWarning($"[ARObjectView] SpiritKey '{spiritKey}' not found. Using index 0.", this);
+                index = 0;
+            }
+            SetCurrentObject(index, isLoop: false);
+        }
     }
 }
