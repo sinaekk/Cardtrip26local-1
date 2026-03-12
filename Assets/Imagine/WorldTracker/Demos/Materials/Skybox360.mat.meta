@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 784bac0a9351b4f859837ca79b451ec6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/WorldTracker/Demos/Materials/Skybox360.mat
+  uploadId: 767497

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 3ae770219a33e446aa790fd129dafe46
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/WorldTracker/Demos/Shaders/TiledMasked.shader
+  uploadId: 767497

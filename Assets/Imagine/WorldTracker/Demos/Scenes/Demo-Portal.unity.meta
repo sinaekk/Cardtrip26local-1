@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 44e5c98822db94156bf9fd7b3d2fab54
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/WorldTracker/Demos/Scenes/Demo-Portal.unity
+  uploadId: 767497

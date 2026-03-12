@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0a4d64b5370d3421580f97a0b418c8b2
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/WebGLTemplates/wTracker 6/TemplateData/progress-bar-full-light.png
+  uploadId: 767497

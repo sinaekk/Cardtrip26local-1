@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ac2a535f1bcf147cb935b761f8808295
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/WorldTracker/Demos/Scenes/Demo-ChromaVideo.unity
+  uploadId: 767497

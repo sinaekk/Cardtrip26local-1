@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 73e25b00e1d4744eeaa375191ac03d56
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/WorldTracker/Demos/Scenes/Demo-3DOFOrbit.unity
+  uploadId: 767497
