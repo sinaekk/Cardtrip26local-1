@@ -71,9 +71,8 @@ namespace FUTUREVISION.Content
         public StampView StampView;
         public RewardView RewardView;
 
-        [Header("Content View Model / New Views (P1-04~P1-08 순서대로 연결)")]
-        // P1-04 에서 BalanceGameView 타입으로 교체 예정
-        public BaseView BalanceGameView;
+        [Header("Content View Model / New Views")]
+        public BalanceGameView BalanceGameView;
 
         [Header("Content View Model/Data")]
         public int CurrentContentIndex = 0;
@@ -104,9 +103,9 @@ namespace FUTUREVISION.Content
         {
             Debug.Log("ContentViewModel Initialize", this);
             base.Initialize();
-            SetState(ContentState.Intro);
 
             InitializeIntro();
+            InitializeBalanceGame();
             InitializeRecommendation();
             InitializeCardTrip();
             InitilizeStamp();
@@ -125,6 +124,9 @@ namespace FUTUREVISION.Content
                 Debug.Log("LocationPin Button Clicked", this);
                 SetState(ContentState.CardTrip);
             });
+
+            // 시작 상태
+            SetState(ContentState.Intro);
         }
 
         private void Update()
@@ -151,8 +153,11 @@ namespace FUTUREVISION.Content
                     IntroView.gameObject.SetActive(true);
                     break;
                 case ContentState.BalanceGame:
-                    // P1-04에서 BalanceGameView 연결 후 활성화
-                    if (BalanceGameView != null) BalanceGameView.gameObject.SetActive(true);
+                    if (BalanceGameView != null)
+                    {
+                        BalanceGameView.gameObject.SetActive(true);
+                        OnEnterBalanceGame();
+                    }
                     break;
                 case ContentState.Recommendation:
                     RecommendationView.gameObject.SetActive(true);
@@ -232,6 +237,30 @@ namespace FUTUREVISION.Content
                     GlobalManager.Instance.SoundModel.PlayButtonClickSound();
                 });
             }
+        }
+        #endregion
+        #region BalanceGame
+        private void InitializeBalanceGame()
+        {
+            if (BalanceGameView == null)
+            {
+                Debug.LogWarning("[ContentViewModel] BalanceGameView is not assigned.", this);
+                return;
+            }
+            // OnCompleted 리스너 1회 연결 (중복 방지)
+            BalanceGameView.OnCompleted.RemoveAllListeners();
+            BalanceGameView.OnCompleted.AddListener((type, spirit) =>
+            {
+                Debug.Log($"[ContentViewModel] BalanceGame done. Type={type} Spirit={spirit.Name}", this);
+                GlobalManager.Instance.SoundModel.PlayButtonClickSound();
+                SetState(ContentState.CardTrip);
+            });
+        }
+
+        private void OnEnterBalanceGame()
+        {
+            if (BalanceGameView == null) return;
+            BalanceGameView.ResetAndStart();
         }
         #endregion
         #region Recommendation
