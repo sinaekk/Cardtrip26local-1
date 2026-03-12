@@ -14,7 +14,7 @@ public class Gemini_Chatbot : MonoBehaviour
 
     [Header("API Key")]
     [Tooltip("Google Gemini API 키를 여기에 입력하세요.")]
-    public string apiKey = "YREMOVED_API_KEY";
+    public string apiKey = ""; // TODO: Inspector에서 입력하거나 환경변수로 주입
     private bool isUpdateing = false;
     public UnityEvent OnReceiveChatbot;
     public string LatestResponse = "";
