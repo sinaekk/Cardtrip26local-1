@@ -1,0 +1,28 @@
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+[Mm]emoryCaptures/
+
+# VS / Rider
+.vscode/
+.vs/
+*.csproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+.DS_Store
+
+# Addressables cache (optional)
+Assets/AddressableAssetsData/*/BuildScriptFastMode.cache
+Assets/AddressableAssetsData/*/BuildScriptPackedMode.cache
+
+# Crash reports
+sysinfo.txt
