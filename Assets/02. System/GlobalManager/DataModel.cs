@@ -19,6 +19,9 @@ namespace FUTUREVISION
         [Header("Data Model/Data")]
         public string mode;
 
+        [Header("Data Model/Session")]
+        public SessionData Session = new SessionData();
+
         [Header("Data Model/Reference")]
         public List<AssetReference> ObjectReferences = new List<AssetReference>();
 
