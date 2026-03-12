@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c4a13c079974c4b33857b6a59c62857f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/WorldTracker/Demos/Materials/Shadow.mat
+  uploadId: 767497

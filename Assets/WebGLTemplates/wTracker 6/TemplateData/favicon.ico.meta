@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ced63bacaefa2433ebb0e9d9196d53bf
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/WebGLTemplates/wTracker 6/TemplateData/favicon.ico
+  uploadId: 767497

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 93f2d9a47a83f4db8bfa96306c9de805
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/Common/Shaders/ARShadow URP.shader
+  uploadId: 767497

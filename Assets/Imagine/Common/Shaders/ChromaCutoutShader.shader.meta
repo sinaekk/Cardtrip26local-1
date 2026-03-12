@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: b6d00c6335ac94138b34a8009469a798
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/Common/Shaders/ChromaCutoutShader.shader
+  uploadId: 767497

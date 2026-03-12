@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e50aef7634eeb4a3d8bb14e752e7b4cb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/Common/Scripts/Helpers/FPSCounter.cs
+  uploadId: 767497

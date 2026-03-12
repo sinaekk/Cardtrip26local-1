@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 5d2423d6611234ba4b87b92bea4ad5f6
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/WorldTracker/Demos/Shaders/SkyboxPortal.shader
+  uploadId: 767497

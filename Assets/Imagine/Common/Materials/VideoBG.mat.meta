@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3aa881c5a6c334712abc12f3db85ff04
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/Common/Materials/VideoBG.mat
+  uploadId: 767497

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cc201dd5aa1ab40c3baec0f21d42c12b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/WorldTracker/Prefabs/MainObject-Portal.prefab
+  uploadId: 767497

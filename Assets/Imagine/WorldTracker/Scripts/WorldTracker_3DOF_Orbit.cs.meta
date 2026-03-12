@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7c9c0bd75acc1408b95b078cf4543b8f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/WorldTracker/Scripts/WorldTracker_3DOF_Orbit.cs
+  uploadId: 767497

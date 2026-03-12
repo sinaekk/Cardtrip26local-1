@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 188c7b662352649a09a2525a8d4b5dbe
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/WebGLTemplates/wTracker 6/opencv.js
+  uploadId: 767497

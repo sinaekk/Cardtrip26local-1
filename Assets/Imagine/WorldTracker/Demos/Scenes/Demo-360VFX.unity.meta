@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 810062b3b6ffb4e5d8e55a800f4a6cf5
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/WorldTracker/Demos/Scenes/Demo-360VFX.unity
+  uploadId: 767497

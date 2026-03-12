@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 975fa35d2694b41a49d53425e93b7524
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/WorldTracker/Scripts/Editor/PostProcessBuild_WT.cs
+  uploadId: 767497

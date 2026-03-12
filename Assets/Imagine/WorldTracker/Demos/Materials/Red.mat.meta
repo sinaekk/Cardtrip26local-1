@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b90b7dd166dd341929506bc1fe34e820
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/Imagine/WorldTracker/Demos/Materials/Red.mat
+  uploadId: 767497

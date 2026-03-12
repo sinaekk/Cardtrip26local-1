@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 145320078d9b2426d92daf60737f1af7
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248561
+  packageName: Imagine WebAR - World Tracker
+  packageVersion: 1.5.3
+  assetPath: Assets/WebGLTemplates/wTracker 6/TemplateData/icons/unity-logo-dark.png
+  uploadId: 767497
