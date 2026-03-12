@@ -207,13 +207,31 @@ namespace FUTUREVISION.Content
         #region Intro
         private void InitializeIntro()
         {
-            IntroView.StartButton.onClick.AddListener(() =>
+            // ── 신규: STEP1 모드 선택 버튼 (null-safe — 프리팹에 버튼이 없으면 무시) ──
+            void OnModeSelected(TravelMode mode)
             {
+                GlobalManager.Instance.DataModel.Session.Mode = mode;
+                Debug.Log($"[Intro] TravelMode selected: {mode}", this);
                 StartCoroutine(ReplacementOrigin());
-
-                SetState(ContentState.Recommendation);
+                SetState(ContentState.BalanceGame);
                 GlobalManager.Instance.SoundModel.PlayButtonClickSound();
-            });
+            }
+
+            if (IntroView.SoloButton    != null) IntroView.SoloButton.onClick.AddListener(()    => OnModeSelected(TravelMode.Solo));
+            if (IntroView.FamilyButton  != null) IntroView.FamilyButton.onClick.AddListener(()  => OnModeSelected(TravelMode.Family));
+            if (IntroView.FriendsButton != null) IntroView.FriendsButton.onClick.AddListener(() => OnModeSelected(TravelMode.Friends));
+            if (IntroView.CoupleButton  != null) IntroView.CoupleButton.onClick.AddListener(()  => OnModeSelected(TravelMode.Couple));
+
+            // ── 구 흐름 호환: StartButton이 있으면 기존 Recommendation으로 이동 ──
+            if (IntroView.StartButton != null)
+            {
+                IntroView.StartButton.onClick.AddListener(() =>
+                {
+                    StartCoroutine(ReplacementOrigin());
+                    SetState(ContentState.Recommendation);
+                    GlobalManager.Instance.SoundModel.PlayButtonClickSound();
+                });
+            }
         }
         #endregion
         #region Recommendation
