@@ -16,10 +16,13 @@ namespace FUTUREVISION.Content
     public enum ContentState
     {
         None,
-        Intro,
+        Intro,           // STEP1: 여행 모드 선택 (신규 흐름)
+        BalanceGame,     // STEP2: 밸런스 게임 → TravelType 산출 (신규)
+        // ── 구 흐름 (호환성 유지) ──────────────────────────
         Recommendation,
         Location,
-        CardTrip,
+        CardTrip,        // STEP5 ARSpirit 흐름으로 대체 예정
+        // ──────────────────────────────────────────────────
         Stamp,
         Reward,
     }
@@ -57,13 +60,21 @@ namespace FUTUREVISION.Content
     {
         public static string DATA_KEY = "ContentData";
 
-        [Header("Content View Model")]
+        // 현재 활성 ContentState — 외부에서 읽기 전용
+        public ContentState CurrentState { get; private set; } = ContentState.None;
+
+        [Header("Content View Model / 기존 Views")]
         public IntroView IntroView;
         public RecommendationView RecommendationView;
         public LocationView LocationView;
         public CardTripView CardTripView;
         public StampView StampView;
         public RewardView RewardView;
+
+        [Header("Content View Model / New Views (P1-04~P1-08 순서대로 연결)")]
+        // P1-04 에서 BalanceGameView 타입으로 교체 예정
+        public BaseView BalanceGameView;
+
         [Header("Content View Model/Data")]
         public int CurrentContentIndex = 0;
         public ContentData Data = new ContentData();
@@ -123,16 +134,25 @@ namespace FUTUREVISION.Content
 
         private void SetState(ContentState newState)
         {
+            CurrentState = newState;
+
+            // 모든 View 비활성화
             IntroView.gameObject.SetActive(false);
             RecommendationView.gameObject.SetActive(false);
             LocationView.gameObject.SetActive(false);
             CardTripView.gameObject.SetActive(false);
             StampView.gameObject.SetActive(false);
             RewardView.gameObject.SetActive(false);
+            if (BalanceGameView != null) BalanceGameView.gameObject.SetActive(false);
+
             switch (newState)
             {
                 case ContentState.Intro:
                     IntroView.gameObject.SetActive(true);
+                    break;
+                case ContentState.BalanceGame:
+                    // P1-04에서 BalanceGameView 연결 후 활성화
+                    if (BalanceGameView != null) BalanceGameView.gameObject.SetActive(true);
                     break;
                 case ContentState.Recommendation:
                     RecommendationView.gameObject.SetActive(true);
