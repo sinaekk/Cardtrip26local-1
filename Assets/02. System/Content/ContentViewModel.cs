@@ -125,9 +125,8 @@ namespace FUTUREVISION.Content
                 SetState(ContentState.CardTrip);
             });
 
-            // 시작 상태
-            StartCoroutine(ReplacementOrigin());
-            SetState(ContentState.CardTrip);
+            // 시작 상태 — IntroView로 먼저 이동 (게임 인트로)
+            SetState(ContentState.Intro);
         }
 
         private void Update()
@@ -169,7 +168,7 @@ namespace FUTUREVISION.Content
                     break;
                 case ContentState.CardTrip:
                     CardTripView.gameObject.SetActive(true);
-                    StartStage1();
+                    StartStage2();   // Stage1(보물찾기) 건너뜀 — 수호구슬 터치부터 시작
                     break;
                 case ContentState.Stamp:
                     StampView.gameObject.SetActive(true);
@@ -213,28 +212,19 @@ namespace FUTUREVISION.Content
         #region Intro
         private void InitializeIntro()
         {
-            // ── 신규: STEP1 모드 선택 버튼 (null-safe — 프리팹에 버튼이 없으면 무시) ──
-            void OnModeSelected(TravelMode mode)
-            {
-                GlobalManager.Instance.DataModel.Session.Mode = mode;
-                Debug.Log($"[Intro] TravelMode selected: {mode}", this);
-                StartCoroutine(ReplacementOrigin());
-                SetState(ContentState.BalanceGame);
-                GlobalManager.Instance.SoundModel.PlayButtonClickSound();
-            }
+            // Solo/Family/Friends/Couple 버튼 비활성화 (사용하지 않음)
+            if (IntroView.SoloButton    != null) IntroView.SoloButton.gameObject.SetActive(false);
+            if (IntroView.FamilyButton  != null) IntroView.FamilyButton.gameObject.SetActive(false);
+            if (IntroView.FriendsButton != null) IntroView.FriendsButton.gameObject.SetActive(false);
+            if (IntroView.CoupleButton  != null) IntroView.CoupleButton.gameObject.SetActive(false);
 
-            if (IntroView.SoloButton    != null) IntroView.SoloButton.onClick.AddListener(()    => OnModeSelected(TravelMode.Solo));
-            if (IntroView.FamilyButton  != null) IntroView.FamilyButton.onClick.AddListener(()  => OnModeSelected(TravelMode.Family));
-            if (IntroView.FriendsButton != null) IntroView.FriendsButton.onClick.AddListener(() => OnModeSelected(TravelMode.Friends));
-            if (IntroView.CoupleButton  != null) IntroView.CoupleButton.onClick.AddListener(()  => OnModeSelected(TravelMode.Couple));
-
-            // ── 구 흐름 호환: StartButton이 있으면 기존 Recommendation으로 이동 ──
+            // 게임 시작하기 버튼 — AR 초기화 후 CardTrip(수호구슬 단계) 진입
             if (IntroView.StartButton != null)
             {
                 IntroView.StartButton.onClick.AddListener(() =>
                 {
                     StartCoroutine(ReplacementOrigin());
-                    SetState(ContentState.Recommendation);
+                    SetState(ContentState.CardTrip);
                     GlobalManager.Instance.SoundModel.PlayButtonClickSound();
                 });
             }
@@ -610,21 +600,18 @@ namespace FUTUREVISION.Content
             //GlobalManager.Instance.DataModel.SaveJsonData<ContentData>(DATA_KEY, Data);
             Data.Save();
 
-            // 스탬프 스테이지로 이동
-            SetState(ContentState.Stamp);
             GlobalManager.Instance.SoundModel.PlayMissionSound(true);
+            Debug.Log("[ContentViewModel] StageClear — 핵심 체험 완료.", this);
 
-            StampView.Mission1Image.gameObject.SetActive(Data.Mission1Clear == 1);
-            StampView.Mission2Image.gameObject.SetActive(Data.Mission2Clear == 1);
-            StampView.Mission3Image.gameObject.SetActive(Data.Mission3Clear == 1);
-            StampView.Mission4Image.gameObject.SetActive(Data.Mission4Clear == 1);
-
-            bool allClear 
-                =  (Data.Mission1Clear == 1) 
-                && (Data.Mission2Clear == 1) 
-                && (Data.Mission3Clear == 1) 
-                && (Data.Mission4Clear == 1);
-            StampView.CompletePopup.SetActive(allClear);
+            // StampView/RewardView 후속 흐름 비활성화 (핵심 3단계 체험 단독 종료)
+            // SetState(ContentState.Stamp);
+            // StampView.Mission1Image.gameObject.SetActive(Data.Mission1Clear == 1);
+            // StampView.Mission2Image.gameObject.SetActive(Data.Mission2Clear == 1);
+            // StampView.Mission3Image.gameObject.SetActive(Data.Mission3Clear == 1);
+            // StampView.Mission4Image.gameObject.SetActive(Data.Mission4Clear == 1);
+            // bool allClear = (Data.Mission1Clear == 1) && (Data.Mission2Clear == 1)
+            //     && (Data.Mission3Clear == 1) && (Data.Mission4Clear == 1);
+            // StampView.CompletePopup.SetActive(allClear);
         }
 
         private IEnumerator ARGuideCoroutine(GameObject guideObject, Action nextStepAction)
