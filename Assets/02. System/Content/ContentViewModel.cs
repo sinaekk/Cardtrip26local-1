@@ -125,7 +125,7 @@ namespace FUTUREVISION.Content
                 SetState(ContentState.CardTrip);
             });
 
-            // 시작 상태 — IntroView로 먼저 이동 (게임 인트로)
+            // 시작 상태 — IntroView 먼저 표시
             SetState(ContentState.Intro);
         }
 
