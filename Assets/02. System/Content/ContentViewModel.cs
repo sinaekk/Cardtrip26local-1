@@ -126,7 +126,8 @@ namespace FUTUREVISION.Content
             });
 
             // 시작 상태
-            SetState(ContentState.Location);
+            StartCoroutine(ReplacementOrigin());
+            SetState(ContentState.CardTrip);
         }
 
         private void Update()
